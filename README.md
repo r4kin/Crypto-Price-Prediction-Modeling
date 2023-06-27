@@ -1,4 +1,4 @@
-# Crytpo-Prediction-Modeling
+# Crypto-Price Prediction-Modeling
 
 
 Introduction -------------
