@@ -1,4 +1,4 @@
-# Crypto-Price Prediction-Modeling
+# Multivariate Crypto Price Prediction Modeling
 
 
 Introduction -------------
