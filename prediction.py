@@ -135,17 +135,7 @@ testScore = np.sqrt(mean_squared_error(y_test[:,0], y_test_pred[:,0]))
 print('Test Score: %.2f RMSE' % (testScore))
 
 
-###### not working 
-# Visualising the results
-figure, axes = plt.subplots(figsize=(10, 5))
-
-axes.plot(pd.to_datetime(btc_data[len(btc_data)-len(y_test):]['date']), y_test, color = 'red', label = 'Real BTC Price')
-axes.plot(pd.to_datetime(btc_data[len(btc_data)-len(y_test):]['date']), y_test_pred, color = 'blue', label = 'Predicted BTC Price')
-#axes.xticks(np.arange(0,394,50))
-plt.title('LSTM - BTC Price Prediction')
-plt.xlabel('Date')
-plt.ylabel('BTC Price')
-plt.xticks(rotation=45)
-plt.legend()
-plt.show()
-
+test_data = btc_data.iloc[-len(y_test_pred):]
+predicted_df = test_data[['date', 'symbol']].copy()
+predicted_df['Predicted'] = y_test_pred
+predicted_df.to_csv('predicted_btcusd.csv', index=False)
